@@ -384,7 +384,7 @@ class ClinicalDataEnrichedResnetBackbone(BaseBackbone):
         # Optional projection layer
         self.proj = nn.Identity()
         if proj:
-            self.proj = nn.Linear(output_dim, output_dim)
+            self.proj = nn.Linear(512, output_dim)
 
         # -----------------------------------------------------------
         # 2. Lightweight MLP Fusion for visual features and attributes
