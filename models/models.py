@@ -357,7 +357,6 @@ class ClinicalDataEnrichedResnetBackbone(BaseBackbone):
                  attr_dim=8,
                  input_channels=32,        # Added: matches the 32 axial slices
                  fix: bool = False,        # When True, load from checkpoint and freeze params
-                 proj: bool = False,
                  init_cfg=None,
                  checkpoint_path=None,
                  # Following params kept for interface compatibility; may not be used by ModifiedResNet18
@@ -384,7 +383,7 @@ class ClinicalDataEnrichedResnetBackbone(BaseBackbone):
         # Optional projection layer
         self.proj = nn.Identity()
         if proj:
-            self.proj = nn.Linear(output_dim, output_dim)
+            self.proj = nn.Linear(512, output_dim)
 
         # -----------------------------------------------------------
         # 2. Lightweight MLP Fusion for visual features and attributes
