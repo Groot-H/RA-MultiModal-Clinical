@@ -99,7 +99,7 @@ class AT(BaseDataset):
                 indices=None,
                 logger=None,
                 save_predictions=True,  # Control whether to save predictions and labels
-                save_path='/mnt/disk2/hou/Journal_Extension/CLIP-Lung/CITE/New_LIDC/csvs/at_predictions.csv'):  # Save path
+                save_path=''):  # Save path
 
         if metric_options is None:
             metric_options = dict()
